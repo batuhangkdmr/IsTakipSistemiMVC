@@ -1,0 +1,22 @@
+﻿
+
+@model İsTakipSistemiMVC.Models.Personeller 
+
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_LayoutSistemYoneticisi.cshtml";
+}
+
+<div class="mt-5">
+    @using (Html.BeginForm("Guncelle", "Personel", FormMethod.Post, new {@class="row g-3"}))
+            {
+                <input type="hidden" value="@Model.PersonelId" name="id" />
+                <div class="col-12">
+                    <label for="adSoyad" class="form-label">Personel Ad Soyad</label>
+                    <input type="text" class="form-control" id="adSoyad" name="adSoyad" value="@Model.PersonelAdSoyad"/>
+                </div>
+                <div class="col-12">
+                    <button class=" btn btn-success" type="submit">Personel Güncelle</button>
+                </div>
+            }
+</div>
